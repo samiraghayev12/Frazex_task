@@ -11,9 +11,8 @@ class MainCubit extends Cubit<MainState> {
 
   Stream<int> get indexStream => _indexController.stream;
 
-  changePage(int index) {
-    _indexController.sink.add(index);
-  }
+  changePage(int index) => _indexController.sink.add(index);
+
 
   changeLang(int index) async {
     if (index == 0) {

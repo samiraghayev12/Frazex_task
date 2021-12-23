@@ -10,8 +10,9 @@ class MainBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mainCubit = BlocProvider.of<MainCubit>(context);
     return StreamBuilder<int>(
-      stream: BlocProvider.of<MainCubit>(context).indexStream,
+      stream: mainCubit.indexStream,
       builder: (context, snapshot) {
         return BottomNavigationBar(
           currentIndex: snapshot.data ?? 0,

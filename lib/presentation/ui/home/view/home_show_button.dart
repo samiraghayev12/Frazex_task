@@ -25,9 +25,7 @@ class HomeShowButton extends StatelessWidget {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38)),
                 primary: UIColor.lightGray,
                 textStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w700)),
-            onPressed: () {
-              homeCubit.search();
-            },
+            onPressed: () => homeCubit.search(),
             child: Text("search_users".tr()),
           ),
         );
