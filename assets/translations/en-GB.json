@@ -1,4 +1,9 @@
 {
+  "az":"Azerbaijani",
+  "ru": "Russian",
+  "en": "English",
+
+  "settings": "Settings",
   "search": "Search",
   "search_users": "Search Users",
   "home": "Home",

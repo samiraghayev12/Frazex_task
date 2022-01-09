@@ -1,4 +1,9 @@
 {
+  "az":"Azərbaycanca",
+  "ru": "Rusca",
+  "en": "İngiliscə",
+
+  "settings": "Tənzimləmələr",
   "search": "Axtar",
   "search_users": "İstifadəçiləri Axtar",
   "home": "Ana Səhifə",

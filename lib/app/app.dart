@@ -18,7 +18,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.montserrat().fontFamily,
         appBarTheme: AppBarTheme(
-          elevation: 1,
+          elevation: 0,
           iconTheme: IconThemeData(
             color: UIColor.black,
           ),

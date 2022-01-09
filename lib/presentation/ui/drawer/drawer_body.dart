@@ -1,36 +1,52 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:frazex_task/app/app.dart';
-import 'package:frazex_task/app/simple_bloc_delegate.dart';
-import 'package:frazex_task/presentation/ui/main/bloc/main_cubit.dart';
-import 'language_model/language_model.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:frazex_task/presentation/ui/drawer/setting/view/settings_page.dart';
 
 class DrawerBody extends StatelessWidget {
-  final List<SettingsListModel> langs;
-
-  const DrawerBody({Key? key, required this.langs}) : super(key: key);
+  const DrawerBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 16.0),
-      child: ListView.builder(
-        itemCount: langs.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                InkWell(
-                  onTap: () => BlocProvider.of<MainCubit>(context).changeLang(index),
-                  child: Row(children: [
-                    Chip(label: Text(langs[index].title)),
-                  ]),
-                )
-              ],
+    return SafeArea(
+      child: Column(
+        children: [
+          SizedBox(height: 8.0),
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0),
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: IconButton(
+                icon: Icon(CupertinoIcons.clear),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
             ),
-          );
-        },
+          ),
+          Expanded(
+              child: ListView.builder(
+                  itemCount: 1,
+                  scrollDirection: Axis.vertical,
+                  itemBuilder: ((context, index) {
+                    return InkWell(
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsPage())),
+                      child: Row(
+                        children: [
+                          SizedBox(width: 8),
+                          Icon(Icons.settings_outlined),
+                          SizedBox(width: 8),
+                          Chip(
+                            label: Text(
+                              "settings".tr(),
+                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  }))),
+        ],
       ),
     );
   }

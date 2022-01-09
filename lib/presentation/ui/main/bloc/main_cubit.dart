@@ -14,20 +14,6 @@ class MainCubit extends Cubit<MainState> {
   changePage(int index) => _indexController.sink.add(index);
 
 
-  changeLang(int index) async {
-    if (index == 0) {
-      emit(SetLang(countryCode: 'AZ', languageCode: "az"));
-    } else if (index == 1) {
-      emit(SetLang(countryCode: 'RU', languageCode: "ru"));
-      print("rus");
-    } else {
-      emit(SetLang(countryCode: 'GB', languageCode: "en"));
-      print("Eng");
-    }
-  }
-
-
-
   @override
   Future<void> close() {
     _indexController.close();

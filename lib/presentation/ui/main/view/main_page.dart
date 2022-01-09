@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:frazex_task/presentation/ui/drawer/drawer_page.dart';
+import 'package:frazex_task/presentation/shared/colors.dart';
+import 'package:frazex_task/presentation/ui/drawer/drawer_body.dart';
+import 'package:frazex_task/presentation/ui/drawer/setting/view/settings_page.dart';
 import 'package:frazex_task/presentation/ui/fake/fake1_page.dart';
 import 'package:frazex_task/presentation/ui/fake/fake2_page.dart';
 import 'package:frazex_task/presentation/ui/home/view/home_page.dart';
@@ -25,11 +27,14 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MainAppBar(),
+      backgroundColor: UIColor.white,
+      appBar: MainAppBar(
+        appText: "Frazex Task",
+      ),
       body: MainBody(pages: MainPage._pages),
       bottomNavigationBar: MainBottomNavigationBar(),
       drawer: Drawer(
-        child: DrawerPage(),
+        child: DrawerBody(),
       ),
     );
   }
