@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frazex_task/presentation/shared/colors.dart';
+import 'package:frazex_task/presentation/ui/drawer/setting/bloc/settings_cubit.dart';
 import 'package:frazex_task/presentation/ui/main/bloc/main_cubit.dart';
 import 'package:frazex_task/presentation/ui/main/view/main_page.dart';
 import 'package:google_fonts/google_fonts.dart';

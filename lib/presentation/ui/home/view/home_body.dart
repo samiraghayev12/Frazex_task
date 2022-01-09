@@ -11,7 +11,7 @@ class HomeBody extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 25.0, horizontal: 10),
+          padding:  EdgeInsets.symmetric(vertical: 25.0, horizontal: 10),
           child: HomeSearch(),
         ),
         HomeShowButton(),

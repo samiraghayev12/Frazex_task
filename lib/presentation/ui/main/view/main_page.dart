@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:frazex_task/presentation/shared/colors.dart';
 import 'package:frazex_task/presentation/ui/drawer/drawer_body.dart';
-import 'package:frazex_task/presentation/ui/drawer/setting/view/settings_page.dart';
+import 'package:frazex_task/presentation/ui/drawer/setting/bloc/settings_cubit.dart';
 import 'package:frazex_task/presentation/ui/fake/fake1_page.dart';
 import 'package:frazex_task/presentation/ui/fake/fake2_page.dart';
 import 'package:frazex_task/presentation/ui/home/view/home_page.dart';
@@ -12,7 +13,12 @@ import 'main_bottom_navigation_bar.dart';
 
 class MainPage extends StatefulWidget {
   static List<Widget> _pages = [
-    HomePage(),
+    BlocBuilder<SettingsCubit, SettingsState>(
+      bloc: SettingsCubit(),
+      builder: (context, state) {
+        return HomePage();
+      },
+    ),
     Fake1Page(),
     Fake2Page(),
   ];
